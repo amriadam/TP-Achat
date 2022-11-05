@@ -6,8 +6,11 @@ import com.esprit.examen.entities.Fournisseur;
 import com.esprit.examen.repositories.FactureRepository;
 import com.esprit.examen.repositories.FournisseurRepository;
 import org.junit.Before;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.TestMethodOrder;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -25,6 +28,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@TestMethodOrder(MethodOrderer.class)
 public class FactureServiceImplTest {
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -45,7 +49,8 @@ public class FactureServiceImplTest {
     /*----------------------------------------------------------------------------------------------------*/
 
     @Test
-    public void addFactureTest() {
+    @Order(1)
+    public void testAddFacture() {
         Facture f = new Facture(1L,10,100,new Date(2000, 10, 21),new Date(2022, 11, 23),true,null,null,null);
         factureService.addFacture(f);
         verify(dao,times(1)).save(f);
@@ -56,7 +61,8 @@ public class FactureServiceImplTest {
 
 
     @Test
-    public  void retrieveAllFacturesTest(){
+    @Order(2)
+    public  void testRetrieveAllFactures(){
         List <Facture> factureList = new ArrayList<Facture>();
         Facture facture1 = new Facture(1L,10,100,new Date(2000, 10, 21),new Date(2022, 11, 23),true,null,null,null);
         Facture facture2 = new Facture(2L,20,150,new Date(2022, 11, 1),new Date(2022, 10, 23),false,null,null,null);
@@ -74,7 +80,8 @@ public class FactureServiceImplTest {
     private static final double DELTA = 1e-15;
 
     @Test
-    public void retrieveFactureByIdTest(){
+    @Order(3)
+    public void testRetrieveFactureById(){
         Facture f = new Facture(1L,10,100,new Date(2000, 10, 21),new Date(2000, 10, 21),true,null,null,null);
         when(dao.findById(1L)).thenReturn(Optional.of(f));
         Facture fact = factureService.retrieveFacture(1L);
@@ -85,7 +92,8 @@ public class FactureServiceImplTest {
     /*----------------------------------------------------------------------------------------------------*/
 
     @Test
-    public void retrieveFactureByFournisseurTest(){
+    @Order(4)
+    public void testRetrieveFactureByFournisseur(){
         Facture f = new Facture(1L,10,100,new Date(2000, 10, 21),new Date(2000, 10, 21),true,null,null,null);
         Set<Facture> setFacture = new HashSet<>();
         setFacture.add(f);
@@ -95,8 +103,9 @@ public class FactureServiceImplTest {
     }
     /*----------------------------------------------------------------------------------------------------*/
 
-    @Test
-    public void cancelFactureTest(){
+   @Test
+   @Order(5)
+   public void testCancelFacture(){
         Facture f = new Facture(6L,10,100,new Date(2000, 10, 21),new Date(2000, 10, 21),false,null,null,null);
         fs.addFacture(f);
         fs.cancelFacture(6L);
