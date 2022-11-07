@@ -60,7 +60,7 @@ pipeline{
             steps{
                 //sh 'docker-compose --version'
                 //sh  'docker compose ps'
-                sh 'sudo docker-compose up'
+                sh 'docker-compose up'
                 
                 
             }
