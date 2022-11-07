@@ -19,10 +19,10 @@ services:
     - 8089:8089
    depends_on:
     - mysqldb
-  
-   angular:
-      image: adamelamri/adam_front:latest
-      container_name: angularcontainer  
-      ports: 
-        - 4200:3000
+    
+  angular:
+   image: adamelamri/adam_front:latest
+   container_name: angularcontainer  
+   ports: 
+    - 4200:3000
       
