@@ -6,8 +6,8 @@ pipeline{
             steps{
                 sh "ls"
                 echo "getting code from git";
-                
-                git "https://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@github.com/amriadam/TP-Achat.git";    
+                git branch : 'adam',
+                url :  "https://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@github.com/amriadam/TP-Achat.git";    
             }
         }
         stage('MVN CLEAN'){
