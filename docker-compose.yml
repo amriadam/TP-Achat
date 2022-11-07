@@ -25,4 +25,6 @@ services:
    container_name: angularcontainer  
    ports: 
     - 4200:3000
+   depends_on:
+    - mysqldb
       
