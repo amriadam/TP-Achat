@@ -65,7 +65,7 @@ pipeline{
               stage('Push Docker Image') {
                    steps {
                      
-                     sh 'docker push adamelamri/adamback:1.0.0 .'
+                     sh 'docker push adamelamri/adamback:1.0.0 '
                    }
               }
         stage('DOCKER COMPOSE'){
