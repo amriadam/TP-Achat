@@ -20,10 +20,12 @@ services:
 #   depends_on:
 #    - mysqldb
     
-  angular:
- #  depends_on:
- #   - achatproject
-   container_name: adam_front
-   ports:
-    - '3000:3000'
-   image: adamelamri/adam_front:latest
+   angular-service: # The name of the service
+      container_name: angularcontainer  
+      #build: ./angulardockerproject # Location of our Dockerfile
+      volumes: # Volume binding
+        - './angulardockerproject:/usr/src/app' 
+      ports: 
+        - '4200:4200' # Port mapping
+      command: > 
+        bash -c "npm install && ng serve --host 0.0.0.0 --port 4200
