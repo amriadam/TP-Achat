@@ -56,7 +56,21 @@ pipeline{
                 version: '1.0' 
             }
         }*/
-        stage('DOCKER'){
+        stage('Build Docker Image') {
+                 steps {
+                 sh 'docker build -t adamelamri/adamBack:1.0.0'
+                 }
+              }
+
+              stage('Push Docker Image') {
+                   steps {
+                     withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                     sh "docker login -u adamelamri -p ${DockerhubPWS}"
+                     }
+                     sh 'docker push adamelamri/adamBack:1.0.0'
+                   }
+              }
+        stage('DOCKER COMPOSE'){
             steps{
                 //sh 'docker-compose --version'
                 //sh  'docker compose ps'
