@@ -64,7 +64,9 @@ pipeline{
 
               stage('Push Docker Image') {
                    steps {
-                     
+                    withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
+                     sh "docker login -u aymenjbara -p ${DockerhubPWS}"
+                     } 
                      sh 'docker push adamelamri/adamback:1.0.0 '
                    }
               }
