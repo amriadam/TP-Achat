@@ -1,39 +1,33 @@
-version: "3.0"
-
-
+version: "3.4"
 
 services:
-  mysqldb:
-    image: mysql:5.7
-    restart: unless-stopped
-    env_file: ./.env
-    environment:
-      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+  mysql-containerFinal1:
+    container_name: mysql-containerFinal1
     ports:
-      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+      - '3306:3306'
+    environment:
+      - MYSQL_DATABASE=1
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    restart: always
     volumes:
-      - db:/var/lib/mysql
-  app:
+      - mysql-containerFinal1:/var/lib/mysql:rw
+    image: 'mysql:latest'
+  dockerfile_springFinal1:
     depends_on:
-      - mysqldb
-    image: test/cloudonomicsspring-app:latest
-    container_name: springboot-app
-    restart: on-failure
-    env_file: ./.env
+      - mysql-containerFinal1
+    container_name: dockerfile_springFinal1
     ports:
-      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
-    environment:
-      SPRING_APPLICATION_JSON: '{
-        "spring.datasource.url"  : "jdbc:mysql://mysqldb:$MYSQLDB_DOCKER_PORT/$MYSQLDB_DATABASE?useSSL=false",
-        "spring.datasource.username" : "$MYSQLDB_USER",
-        "spring.datasource.password" : "$MYSQLDB_ROOT_PASSWORD",
-        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
-        "spring.jpa.hibernate.ddl-auto" : "update"
-      }'
-    volumes:
-      - .m2:/root/.m2
-    stdin_open: true
-    tty: true
+      - '8089:8089'
+    image: aymenjbara/dockerfile_spring:2.2.4
+
+  dockerfile_angularFinal1:
+    depends_on:
+      - dockerfile_springFinal1
+    container_name: dockerfile_angularFinal1
+
+    ports:
+      - '4200:80'
+    image: aymenjbara/dockerfile_angular:2.2.2
 
 volumes:
-  db:
+  mysql-containerFinal1: { }
