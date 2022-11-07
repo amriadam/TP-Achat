@@ -58,7 +58,7 @@ pipeline{
         }*/
         stage('Build Docker Image') {
                  steps {
-                 sh 'docker build -t adamelamri/adamback:1.0.0'
+                 sh 'docker build -t adamelamri/adamback:1.0.0 .'
                  }
               }
 
