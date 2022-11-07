@@ -67,7 +67,7 @@ pipeline{
                      withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
                      sh "docker login -u adamelamri -p ${DockerhubPWS}"
                      }
-                     sh 'docker push adamelamri/adamBack:1.0.0'
+                     sh 'docker push adamelamri/adamback:1.0.0 .'
                    }
               }
         stage('DOCKER COMPOSE'){
