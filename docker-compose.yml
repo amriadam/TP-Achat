@@ -26,5 +26,5 @@ services:
    ports: 
     - 4200:3000
    depends_on:
-    - mysqldb
+    - achatproject
       
