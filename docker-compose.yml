@@ -25,5 +25,5 @@ services:
  #   - achatproject
    container_name: adam_front
    ports:
-    - '3000:80'
+    - '4200:80'
    image: adamelamri/adam_front:latest
