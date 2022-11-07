@@ -1,9 +1,21 @@
-version: "3.0"
-mysqldb:
-    image: mysql:5.7
-    restart: unless-stopped
-    env_file: ./.env
-    environment:
-      - MYSQL_DATABASE=$MYSQLDB_DATABASE
-      - db:/var/lib/mysql
-  
+#docker-compose.yml
+version: "3"
+
+services:
+  mysqldb:
+   image: mysql:8
+   container_name: mysqldb
+   restart: unless-stopped
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+   volumes :
+     - /home/mysql/data:/var/lib/mysql
+
+  achatproject: 
+   image: achatproject:1.0
+   container_name: achatproject
+   restart: on-failure
+   ports: 
+    - 8089:8089
+   depends_on:
+    - mysqldb
