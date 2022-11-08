@@ -20,11 +20,11 @@ pipeline{
                 sh "mvn compile"
             }
         }
-        /*stage('MVN SONARQUBE'){
+        stage('MVN SONARQUBE'){
             steps{
-                sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=1111"
+                sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=jihene"
             }
-        }*/
+        }
         /*stage('MVN TEST'){
             steps{
                 sh "mvn test"
