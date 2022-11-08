@@ -37,7 +37,7 @@ pipeline{
             }
         }
         
-        /*stage('NEXUS'){
+        stage('NEXUS'){
             steps{
                 nexusArtifactUploader artifacts: [
                     [
@@ -55,7 +55,7 @@ pipeline{
                 repository: 'achat-adam-release', 
                 version: '1.0' 
             }
-        }*/
+        }
         stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t adamelamri/adamback:1.0.0 .'
