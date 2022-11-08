@@ -6,7 +6,7 @@ pipeline{
             steps{
                 sh "ls"
                 echo "getting code from git";
-                git branch : 'adam',
+                git branch : 'jihene',
                 url :  "https://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@github.com/amriadam/TP-Achat.git";    
             }
         }
@@ -56,7 +56,7 @@ pipeline{
                 version: '1.0' 
             }
         }*/
-        stage('Build Docker Image') {
+     /*   stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t adamelamri/adamback:1.0.0 .'
                  }
@@ -78,7 +78,7 @@ pipeline{
                 
                 
             }
-        }
+        }*/
         
     }
 }
