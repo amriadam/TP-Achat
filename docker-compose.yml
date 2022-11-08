@@ -12,7 +12,7 @@ services:
      - /home/mysql/data:/var/lib/mysql
 
   achatproject: 
-   image: adamelamri/adamback:1.0.0
+   image: ahmedtouil/achatback:1.0.0
    container_name: achatproject
    restart: on-failure
    ports: 
@@ -20,11 +20,11 @@ services:
    depends_on:
     - mysqldb
     
-  angular:
-   image: adamelamri/adam_front:latest
-   container_name: angularcontainer  
-   ports: 
-    - 4200:3000
-   depends_on:
-    - achatproject
+  # angular:
+  #  image: ahmedtouil/achatfront:latest
+  #  container_name: angularcontainer  
+  #  ports: 
+  #   - 4200:3000
+  #  depends_on:
+  #   - achatproject
       
