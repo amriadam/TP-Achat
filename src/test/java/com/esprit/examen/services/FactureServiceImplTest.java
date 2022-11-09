@@ -28,7 +28,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FactureServiceImplTest {
 
 /*----------------------------------------------------------------------------------------------------*/

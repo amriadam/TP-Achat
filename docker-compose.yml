@@ -24,7 +24,7 @@ services:
   #  image: ahmedtouil/achatfront:latest
   #  container_name: angularcontainer  
   #  ports: 
-  #   - 4200:3000
+  #   - 4200:4200
   #  depends_on:
   #   - achatproject
       
