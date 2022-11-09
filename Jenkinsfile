@@ -62,11 +62,9 @@ pipeline{
                  }
               }
 
-              stage('Push Docker Image') {
+             stage('Push Docker Image') {
                    steps {
-                    withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
-                     sh "docker login -u jihenesliti -p ${DockerhubPWS}"
-                     } 
+                     sh 'docker login -u "jihenesliti" -p "5;X#,;+5Z_PfvfM" docker.io'
                      sh 'docker push jihenesliti/jiheneback:1.0.0 '
                    }
               }
