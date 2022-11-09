@@ -23,11 +23,5 @@ services:
    depends_on:
     - mysqldb
     
-  angular:
-   image: adamelamri/adam_front:latest
-   container_name: angularcontainer  
-   ports: 
-    - 4200:3000
-   depends_on:
-    - achatproject
+  
       
