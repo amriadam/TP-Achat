@@ -9,7 +9,7 @@ services:
    environment:
      MYSQL_ROOT_PASSWORD: root
    volumes :
-     - /home/mysql/data:/var/lib/mysql
+     - /home/mysql/data:/var/lib/mysql:rw
 
   achatproject: 
    image: ahmedtouil/achatback:1.0.0
