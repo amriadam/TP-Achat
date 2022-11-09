@@ -58,16 +58,16 @@ pipeline{
         }
      stage('Build Docker Image') {
                  steps {
-                 sh 'docker build -t jihenesliti/jiheneback:1.0.0 .'
+                 sh 'sudo docker build -t jihenesliti/jiheneback:1.0.0 .'
                  }
               }
 
               stage('Push Docker Image') {
                    steps {
                     withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
-                     sh "docker login -u jihenesliti -p ${DockerhubPWS}"
+                     sh "sudo docker login -u jihenesliti -p ${DockerhubPWS}"
                      } 
-                     sh 'docker push jihenesliti/jiheneback:1.0.0 '
+                     sh ' sudo docker push jihenesliti/jiheneback:1.0.0 '
                    }
               }
           /* 
