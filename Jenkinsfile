@@ -56,20 +56,21 @@ pipeline{
                 version: '1.0' 
             }
         }
-     /*   stage('Build Docker Image') {
+     stage('Build Docker Image') {
                  steps {
-                 sh 'docker build -t adamelamri/adamback:1.0.0 .'
+                 sh 'docker build -t jihenesliti/jiheneback:1.0.0 .'
                  }
               }
 
               stage('Push Docker Image') {
                    steps {
                     withCredentials([string(credentialsId: 'DockerhubPWS', variable: 'DockerhubPWS')]) {
-                     sh "docker login -u adamelamri -p ${DockerhubPWS}"
+                     sh "docker login -u jihenesliti -p ${DockerhubPWS}"
                      } 
-                     sh 'docker push adamelamri/adamback:1.0.0 '
+                     sh 'docker push jihenesliti/jiheneback:1.0.0 '
                    }
               }
+          /* 
         stage('DOCKER COMPOSE'){
             steps{
                 //sh 'docker-compose --version'
