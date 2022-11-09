@@ -37,7 +37,7 @@ pipeline{
             }
         }
         
-        /*stage('NEXUS'){
+        stage('NEXUS'){
             steps{
                 nexusArtifactUploader artifacts: [
                     [
@@ -49,13 +49,13 @@ pipeline{
                 ], 
                 credentialsId: 'nexus3', 
                 groupId: 'com.esprit.examen', 
-                nexusUrl: '192.168.44.128:8081', 
+                nexusUrl: '172.16.1.215:8080', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'achat-adam-release', 
+                repository: 'simpleapp-release', 
                 version: '1.0' 
             }
-        }*/
+        }
      /*   stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t adamelamri/adamback:1.0.0 .'
