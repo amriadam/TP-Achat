@@ -11,8 +11,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:
-      - mysql-containerFinal1:/var/lib/mysql:rw 
-
+      - /home/mysql/data:/var/lib/mysql
     
   achatproject: 
    image: adamelamri/adamback:1.0.0
