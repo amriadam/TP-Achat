@@ -68,6 +68,7 @@ pipeline{
                      sh 'docker push jihenesliti/jiheneback:1.0.0 '
                    }
               }
+        
           /* 
         stage('DOCKER COMPOSE'){
             steps{
