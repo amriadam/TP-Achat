@@ -12,9 +12,9 @@ services:
      - /home/mysql/data:/var/lib/mysql
 
   achatproject: 
-   image: achatproject:1.0
-   container_name: achatproject
-   restart: on-failure
+   image: adamelamri/adamback:1.0
+   container_name: adamelamri/adamback
+   #restart: on-failure
    ports: 
     - 8089:8089
    depends_on:
