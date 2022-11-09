@@ -64,7 +64,7 @@ pipeline{
 
              stage('Push Docker Image') {
                    steps {
-                     sh 'sudo docker login -u "jihenesliti" -p "jihene123" docker.io'
+                     sh 'docker login -u "jihenesliti" -p "jihene123" docker.io'
                      sh 'docker push jihenesliti/jiheneback:1.0.0 '
                    }
               }
