@@ -25,11 +25,11 @@ pipeline{
                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=1111"
             }
         }
-        /*stage('MVN TEST'){
+        stage('MVN TEST'){
             steps{
                 sh "mvn test"
             }
-        }*/
+        }
         stage('MVN BUILD'){
             steps{
                 sh "mvn clean install package -Dmaven.test.skip=true"
