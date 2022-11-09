@@ -9,7 +9,7 @@ services:
    environment:
      MYSQL_ROOT_PASSWORD: root
    volumes :
-     - /home/mysql/data:/var/lib/mysql:rw
+     - /home/mysql/data:/var/lib/mysql
 #     - ./dbdata:/var/lib/mysql
 
   achatproject: 
