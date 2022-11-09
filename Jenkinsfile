@@ -25,33 +25,13 @@ pipeline{
                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=1111"
             }
         }
-        stage('Build Docker Image') {
-                 steps {
-                 sh 'docker build -t adamelamri/adamback:1.0.0 .'
-                 }
-              }
-
-              stage('Push Docker Image') {
-                   steps {
-                     sh 'docker login -u "adamelamri" -p "5;X#,;+5Z_PfvfM" docker.io'
-                     sh 'docker push adamelamri/adamback:1.0.0 '
-                   }
-        }
-        stage('DOCKER COMPOSE1'){
-            steps{
-                //sh 'docker-compose --version'
-                //sh  'docker compose ps'
-                sh 'docker-compose up'
-                
-                
-            }
-        }
+        /*
         
         stage('MVN TEST'){
             steps{
                 sh "mvn test"
             }
-        }
+        }*/
         stage('MVN BUILD'){
             steps{
                 sh "mvn clean install package -Dmaven.test.skip=true"
@@ -59,7 +39,7 @@ pipeline{
             }
         }
         
-        /*stage('NEXUS'){
+        stage('NEXUS'){
             steps{
                 nexusArtifactUploader artifacts: [
                     [
@@ -98,7 +78,7 @@ pipeline{
                 
                 
             }
-        }*/
+        }
         
     }
     post {
