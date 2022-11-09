@@ -58,7 +58,7 @@ pipeline{
                 version: '1.0' 
             }
         }
-        stage('Build Docker Image') {
+        /*stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t adamelamri/adamback:1.0.0 .'
                  }
@@ -69,7 +69,7 @@ pipeline{
                      sh 'docker login -u "adamelamri" -p "5;X#,;+5Z_PfvfM" docker.io'
                      sh 'docker push adamelamri/adamback:1.0.0 '
                    }
-              }
+              }*/
         stage('DOCKER COMPOSE'){
             steps{
                 //sh 'docker-compose --version'
