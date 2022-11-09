@@ -13,7 +13,7 @@ services:
 
   achatproject: 
    image: adamelamri/adamback
-   container_name: adamelamri/adamback
+   container_name: adamelamri/adamback:1.0.0
    #restart: on-failure
    ports: 
     - 8089:8089
