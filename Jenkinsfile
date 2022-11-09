@@ -20,11 +20,11 @@ pipeline{
                 sh "mvn compile"
             }
         }
-        stage('MVN SONARQUBE'){
+        /*stage('MVN SONARQUBE'){
             steps{
                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=1111"
             }
-        }
+        }*/
         /*
         
         stage('MVN TEST'){
@@ -38,7 +38,7 @@ pipeline{
                 
             }
         }
-        
+       /* 
         stage('NEXUS'){
             steps{
                 nexusArtifactUploader artifacts: [
@@ -57,7 +57,7 @@ pipeline{
                 repository: 'achat-adam-release', 
                 version: '1.0' 
             }
-        }
+        }*/
         /*stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t adamelamri/adamback:1.0.0 .'
