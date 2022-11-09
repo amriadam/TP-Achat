@@ -3,24 +3,19 @@ version: "3"
 
 services:
   mysqldb:
-    container_name: mysqldb
-    image: mysql
-    ports:
-      - '3306:3306'
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-    volumes:
-      - /home/mysql/data:/var/lib/mysql
-    
+   image: mysql:8
+   container_name: mysqldb
+   restart: unless-stopped
+   environment:
+     MYSQL_ROOT_PASSWORD: root
+   volumes :
+     - /home/mysql/data:/var/lib/mysql
+
   achatproject: 
-   image: adamelamri/adamback:1.0.0
+   image: achatproject:1.0
    container_name: achatproject
    restart: on-failure
    ports: 
     - 8089:8089
    depends_on:
     - mysqldb
-    
-  
-      
