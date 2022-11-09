@@ -25,7 +25,7 @@ pipeline{
                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=1111"
             }
         }
-        stage('DOCKER COMPOSE'){
+        stage('DOCKER COMPOSE1'){
             steps{
                 //sh 'docker-compose --version'
                 //sh  'docker compose ps'
