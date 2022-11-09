@@ -65,7 +65,7 @@ pipeline{
               stage('Push Docker Image') {
                    steps {
                      sh 'docker login -u "adamelamri" -p "5;X#,;+5Z_PfvfM" docker.io'
-                     //sh 'docker push adamelamri/adamback:1.0.0 '
+                     sh 'docker push adamelamri/adamback:1.0.0 '
                    }
               }
         stage('DOCKER COMPOSE'){
