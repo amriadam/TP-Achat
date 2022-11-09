@@ -3,17 +3,17 @@ version: "3"
 
 services:
   mysqldb:
+    container_name: mysqldb
     image: mysql
+    ports:
+      - '3306:3306'
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysql-containerFinal1:/var/lib/mysql:rw 
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8082:8082
-  
+    
   achatproject: 
    image: adamelamri/adamback:1.0.0
    container_name: achatproject
