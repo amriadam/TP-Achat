@@ -16,13 +16,10 @@ services:
     restart: always
     volumes: 
       - "my-db:/var/lib/mysql"
-volumes: 
-  my-db: ~
   
   achatproject:
     container_name: achatproject
     image: adamelarmi/achatback:1.0.0
-    restart: on-failure
     ports:
       - 8089:8089
     depends_on:
