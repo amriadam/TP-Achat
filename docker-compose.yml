@@ -18,3 +18,13 @@ services:
 version: "3"
 volumes: 
   my-db: ~
+  
+  achatproject: 
+   image: adamelarmi/achatback:1.0.0
+   container_name: achatproject
+   restart: on-failure
+   ports: 
+    - 8089:8089
+   depends_on:
+    - mysqldb
+  
