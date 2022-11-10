@@ -70,7 +70,7 @@ pipeline{
                    }
               }
         
-          /* 
+          
         stage('DOCKER COMPOSE'){
             steps{
                 //sh 'docker-compose --version'
@@ -79,7 +79,7 @@ pipeline{
                 
                 
             }
-        }*/
+        }
         
     }
 }
