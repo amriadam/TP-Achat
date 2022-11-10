@@ -27,11 +27,12 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class FactureServiceImplTest {
 
-/*----------------------------------------------------------------------------------------------------*/
+
     @Autowired
     FactureRepository fr;
     @Autowired
@@ -46,7 +47,7 @@ public class FactureServiceImplTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
-    /*----------------------------------------------------------------------------------------------------*/
+
 
     @Test
     @Order(1)
@@ -56,7 +57,7 @@ public class FactureServiceImplTest {
         verify(dao,times(1)).save(f);
     }
 
-    /*----------------------------------------------------------------------------------------------------*/
+
 
 
 
@@ -75,7 +76,7 @@ public class FactureServiceImplTest {
         verify(dao, times(1)).findAll();
 
     }
-    /*----------------------------------------------------------------------------------------------------*/
+
 
     private static final double DELTA = 1e-15;
 
@@ -89,7 +90,6 @@ public class FactureServiceImplTest {
         assertEquals(100,fact.getMontantFacture(),DELTA);
         assertEquals(new Date(2000, 10, 21),fact.getDateCreationFacture());
     }
-    /*----------------------------------------------------------------------------------------------------*/
 
     @Test
     @Order(4)
@@ -101,7 +101,6 @@ public class FactureServiceImplTest {
         when(daoFournisseur.save(fournisseur)).thenReturn(fournisseur);
         assertNotNull(fournisseur.getFactures());
     }
-    /*----------------------------------------------------------------------------------------------------*/
 
    @Test
    @Order(5)
@@ -112,7 +111,4 @@ public class FactureServiceImplTest {
         Facture fres = fr.findById(6L).get();
         assertEquals(true,fres.getArchivee());
     }
-
-
-
 }
