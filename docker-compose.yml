@@ -19,7 +19,7 @@ services:
   
   achatproject:
     container_name: achatproject
-    image: adamelarmi/adamback:1.0.0
+    image: adamelamri/adamback:1.0.0
     ports:
       - 8089:8089
     depends_on:
