@@ -20,12 +20,12 @@ pipeline{
                 sh "mvn compile"
             }
         }
-        /*
+        
         stage('MVN SONARQUBE'){
             steps{
                 sh "mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=jihene"
             }
-        }*/
+        }
         /*stage('MVN TEST'){
             steps{
                 sh "mvn test"
@@ -37,7 +37,7 @@ pipeline{
                 
             }
         }
-        /*
+        
         stage('NEXUS'){
             steps{
                 nexusArtifactUploader artifacts: [
@@ -56,7 +56,7 @@ pipeline{
                 repository: 'simpleapp-release', 
                 version: '1.0' 
             }
-        }*/
+        }
      stage('Build Docker Image') {
                  steps {
                  sh 'docker build -t jihenesliti/jiheneback:1.0.0 .'
