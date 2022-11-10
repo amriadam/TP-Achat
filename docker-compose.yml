@@ -12,14 +12,14 @@ services:
      - /home/mysql/data:/var/lib/mysql
 #     - ./dbdata:/var/lib/mysql
 
-  achatproject: 
-   image: ahmedtouil/achatback:1.0.0
-   container_name: achatproject
-   restart: on-failure
-   ports: 
-    - 8089:8089
-   depends_on:
-    - mysqldb
+  #achatproject: 
+   #image: ahmedtouil/achatback:1.0.0
+   #container_name: achatproject
+   #restart: on-failure
+   #ports: 
+   # - 8089:8089
+   #depends_on:
+   # - mysqldb
     
   # angular:
   #  image: ahmedtouil/achatfront:latest
