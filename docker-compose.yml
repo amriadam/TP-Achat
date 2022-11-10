@@ -24,5 +24,12 @@ services:
       - 8089:8089
     depends_on:
       - mysqldb
+  angular:
+    ports:
+      - '4200:3000'
+    image: adamelamri/adam_front:latest
+    depends_on:
+      - achatproject
+    container_name: adamfront
 volumes:
   my-db: ~
