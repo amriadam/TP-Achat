@@ -13,8 +13,8 @@ services:
 
   achatproject: 
    image: jihenesliti/jiheneback:1.0.0
-   container_name: achatproject
-   restart: jiheneback
+   container_name: jiheneback
+
    ports: 
     - 8089:8089
    depends_on:
