@@ -82,4 +82,14 @@ pipeline{
         }
         
     }
+     post {
+                      success {
+                        
+                            emailext body: 'Pipeline build successfully', subject: 'Pipeline build', to: 'jihene.sliti@esprit.tn'
+                      }
+                      failure {
+                        
+                            emailext body: 'Pipeline failure', subject: 'Pipeline failure', to: 'jihene.sliti@esprit.tn'
+                      }
+              }
 }
