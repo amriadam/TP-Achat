@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.esprit.examen</groupId>
 	<artifactId>tpAchatProject</artifactId>
-	<version>1.0</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>tpAchatProject</name>
 	<description>tpAchatProject</description>
 	<properties>
@@ -85,5 +85,11 @@
 		</plugins>
 
 	</build>
+	<distributionManagement>
+	<repository>
+	<id>deploymentRepo</id>
+	<url>http://172.16.1.215:8081/repository/maven-snapshots/</url>
+	</repository>
+	</distributionManagement>
 	
 </project>
