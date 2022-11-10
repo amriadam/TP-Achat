@@ -8,8 +8,7 @@ services:
    restart: unless-stopped
    environment:
      MYSQL_ROOT_PASSWORD: root
-   volumes :
-     - /home/mysql/data:/var/lib/mysql
+ 
 
   achatproject: 
    image: jihenesliti/jiheneback:1.0.0
